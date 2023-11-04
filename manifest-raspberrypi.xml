@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest>
+
+  <default sync-j="8"/>
+
+  <remote fetch="https://git.yoctoproject.org" name="yocto"/>
+  <remote fetch="https://git.openembedded.org" name="oe"/>
+  <remote fetch="https://github.com/spikynavin" name="main"/>
+
+  <project remote="yocto" revision="kirkstone" name="poky" path="sources/poky"/>
+  <project remote="yocto" revision="kirkstone" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
+  <project remote="yocto" revision="kirkstone" name="meta-virtualization" path="sources/meta-virtualization"/>
+  <project remote="oe" revision="kirkstone" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="main" revision="kirkstone" name="meta-elinux" path="sources/meta-elinux"/>
+  <project remote="main" revision="kirkstone-conf" name="hardware-conf" path="sources/meta-elinux/conf/hardware-conf">
+    <linkfile src="setup-embedded-linux-rpi" dest="sources/meta-elinux/conf/setup-embedded-linux-rpi"/>
+    <linkfile src="build.sh" dest="build.sh"/>
+  </project>
+  <project remote="main" revision="main" name="scripts" path="sources/meta-elinux/scripts">
+    <linkfile src="build-backup.sh" dest="build-backup.sh"/>
+  </project>
+
+</manifest>
